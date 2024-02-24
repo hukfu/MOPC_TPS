@@ -1,34 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
     public List<Transform> PatrolPoints;
+    public PlayerController Player;
+    public float ViewAngle;
 
     private NavMeshAgent _navMeshAgent;
+    private bool _isPlayerNoticed;
 
-    void Start()
+    private void Start()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-
+        InitComponentLinks();
         PickNewPatrolPoint();
     }
-
-    void Update()
+    private void Update()
     {
+        NoticePlayerUpdate();
+        ChaseUpdate();
         PatrolUpdate();
     }
 
-    private void PatrolUpdate()
+    private void InitComponentLinks()
     {
-        if (_navMeshAgent.remainingDistance == 0)
-        {
-            PickNewPatrolPoint();
-        }
+        _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
+    private void NoticePlayerUpdate()
+    {
+        var direction = Player.transform.position - transform.position;
+        _isPlayerNoticed = false;
+        if (Vector3.Angle(transform.forward, direction) < ViewAngle)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + Vector3.up, direction, out hit))
+            {
+                if (hit.collider.gameObject == Player.gameObject)
+                {
+                    _isPlayerNoticed = true;
+                }
+            }
+        }
+    }
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            _navMeshAgent.destination = Player.transform.position;
+        }
+    }
+    private void PatrolUpdate()
+    {
+        if (!_isPlayerNoticed)
+        {
+            if (_navMeshAgent.remainingDistance == 0)
+            {
+                PickNewPatrolPoint();
+            }
+        }
+    }
     private void PickNewPatrolPoint()
     {
         _navMeshAgent.destination = PatrolPoints[Random.Range(0, PatrolPoints.Count)].position;
