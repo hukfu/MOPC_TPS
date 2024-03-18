@@ -17,7 +17,8 @@ public class Foods : MonoBehaviour
 
     private void MoveFixedUpdate()
     {
-        transform.position += transform.forward * Speed * Time.fixedDeltaTime;
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+        //transform.position += transform.forward * Speed * Time.fixedDeltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
