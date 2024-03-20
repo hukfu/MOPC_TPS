@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovementControllsUpdate();
+        AnimationControls();
     }
     void FixedUpdate()
     {
@@ -61,5 +62,17 @@ public class PlayerController : MonoBehaviour
         {
             _fallVelocity = 0;
         }
+    }
+
+    private void AnimationControls()
+    {
+        Vector3 mousePosition = new Vector3()
+        {
+            x = Input.GetAxis("Mouse X"),
+            y = Input.GetAxis("Mouse Y")
+        };
+        Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
+        //Debug.Log($"mouse: {mousePosition}");
+        //Debug.Log($"world: {point}");
     }
 }

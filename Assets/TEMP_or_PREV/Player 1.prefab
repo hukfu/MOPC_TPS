@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 435345459764802107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.719, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 685754023516908118}
   m_RootOrder: 2
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.4, y: 4.8}
+  m_Size: {x: 1.7, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -274,6 +274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6103d041ed838429e070553e258de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodsPrefab: {fileID: 8313370025773947322, guid: dc5e619ab67c13445aef63b777dd39d2,
+  ApplePrefab: {fileID: 8313370025773947322, guid: dc5e619ab67c13445aef63b777dd39d2,
     type: 3}
+  TeaPrefab: {fileID: 8313370025773947322, guid: 2e508a0de636c784095830b4ff0b57aa,
+    type: 3}
+  SaladPrefab: {fileID: 8313370025773947322, guid: dcb00e1de20087e4480f1ee63e4d72c3,
+    type: 3}
+  AppleCapacity: 10
+  TeaCapacity: 10
+  SaladCapacity: 10
   Delay: 1

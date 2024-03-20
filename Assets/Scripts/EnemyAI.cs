@@ -24,6 +24,6 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseUpdate()
     {
-            _navMeshAgent.destination = Player.transform.position;
+        _navMeshAgent.destination = Player.transform.position;
     }
 }

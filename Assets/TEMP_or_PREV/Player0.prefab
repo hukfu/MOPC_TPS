@@ -43,8 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6103d041ed838429e070553e258de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodsPrefab: {fileID: 8313370025773947322, guid: dc5e619ab67c13445aef63b777dd39d2,
-    type: 3}
+  ApplePrefab: {fileID: 0}
+  TeaPrefab: {fileID: 0}
+  SaladPrefab: {fileID: 0}
+  AppleCapacity: 10
+  TeaCapacity: 10
+  SaladCapacity: 10
+  Delay: 1
 --- !u!1 &8066571058409747195
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +145,7 @@ GameObject:
   - component: {fileID: 8066571059617442605}
   - component: {fileID: 8066571059617442604}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
