@@ -87,6 +87,9 @@ MonoBehaviour:
   Speed: 10
   Lifetime: 10
   Damage: 1
+  IsApples: 0
+  IsTea: 0
+  IsSalad: 1
 --- !u!1 &8944709466960340311
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,13 @@ public class PlayerController : MonoBehaviour
     public float Gravity = 9.8f;
     public float Speed = 0.0f;
 
+    public Animator Animator;
+
     private Vector3 _moveVector;
     private float _fallVelocity = 0.0f;
+
+
+    public float yOffset = 100f;
 
     private CharacterController _characterController;
 
@@ -17,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovementControllsUpdate();
-        AnimationControls();
+        AnimationHandler();
     }
     void FixedUpdate()
     {
@@ -33,22 +38,10 @@ public class PlayerController : MonoBehaviour
     {
         _moveVector = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            _moveVector += transform.forward;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _moveVector -= transform.right;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            _moveVector -= transform.forward;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _moveVector += transform.right;
-        }
+        _moveVector.x = Input.GetAxis("Horizontal");
+        _moveVector.z = Input.GetAxis("Vertical");
+
+        _moveVector = transform.rotation * _moveVector;
     }
 
     private void MovementFixedUpdate()
@@ -64,15 +57,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void AnimationControls()
+    private void AnimationHandler()
     {
-        Vector3 mousePosition = new Vector3()
+        if (_moveVector.x == 0 && _moveVector.z == 0)
         {
-            x = Input.GetAxis("Mouse X"),
-            y = Input.GetAxis("Mouse Y")
-        };
-        Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
-        //Debug.Log($"mouse: {mousePosition}");
-        //Debug.Log($"world: {point}");
+            Animator.SetBool("IsMoving", false);
+        }
+        else
+        {
+            Animator.SetBool("IsMoving", true);
+        }
     }
 }

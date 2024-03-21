@@ -6,6 +6,10 @@ public class Foods : MonoBehaviour
     public float Lifetime = 1.0f;
     public float Damage = 1.0f;
 
+    public bool IsApples;
+    public bool IsTea;
+    public bool IsSalad;
+
     private void Start()
     {
         Invoke("DestroyFoods", Lifetime);
@@ -46,9 +50,41 @@ public class Foods : MonoBehaviour
         var EnemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (EnemyHealth != null)
         {
-            EnemyHealth.DealDamage(Damage);
-            DestroyFoods();
+            if (collision.collider.CompareTag("AppleWanter"))
+            {
+                if (IsApples)
+                {
+                    EnemyHealth.DealDamage(Damage);
+                    DestroyFoods();
+                }
+                else
+                {
+                    DestroyFoods();
+                }
+            }
+            else if (collision.collider.CompareTag("TeaWanter"))
+            {
+                if (IsTea)
+                {
+                    EnemyHealth.DealDamage(Damage);
+                    DestroyFoods();
+                }
+                else
+                {
+                    DestroyFoods();
+                }
+            }
+            else if (collision.collider.CompareTag("SaladWanter"))
+            {
+                if (IsSalad)                {
+                    EnemyHealth.DealDamage(Damage);
+                    DestroyFoods();
+                }
+                else
+                {
+                    DestroyFoods();
+                }
+            }
         }
     }
- 
 }
