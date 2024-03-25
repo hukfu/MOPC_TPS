@@ -186,3 +186,4 @@ MonoBehaviour:
   IsApples: 1
   IsTea: 0
   IsSalad: 0
+  Player: {fileID: 5774476403383173288, guid: d98eace116bd13b4ab962181416249cb, type: 3}

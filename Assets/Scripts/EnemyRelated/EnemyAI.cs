@@ -16,6 +16,10 @@ public class EnemyAI : MonoBehaviour
     {
         ChaseUpdate();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        AttackUpdate(collision);
+    }
 
     private void InitComponentLinks()
     {
@@ -25,5 +29,14 @@ public class EnemyAI : MonoBehaviour
     private void ChaseUpdate()
     {
         _navMeshAgent.destination = Player.transform.position;
+    }
+
+    private void AttackUpdate(Collision collision)
+    {
+        var PlayerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        if (PlayerHealth != null)
+        {
+            PlayerHealth.DealDamage(PlayerHealth.Maxvalue);
+        }
     }
 }

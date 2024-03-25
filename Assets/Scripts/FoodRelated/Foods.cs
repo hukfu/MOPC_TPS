@@ -10,6 +10,8 @@ public class Foods : MonoBehaviour
     public bool IsTea;
     public bool IsSalad;
 
+    private PlayerHealth _playerHealth;
+
     private void Start()
     {
         Invoke("DestroyFoods", Lifetime);
@@ -18,22 +20,32 @@ public class Foods : MonoBehaviour
     {
         MoveFixedUpdate();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        InitComponentLinks(collision);
+        PlayerCheck(collision);
+        DamageEnemy(collision);
+    }
+
+    private void InitComponentLinks(Collision collision)
+    {
+        var PlayerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        if (PlayerHealth != null)
+        {
+            _playerHealth = PlayerHealth;
+        }
+    }
 
     private void MoveFixedUpdate()
     {
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        PlayerCheck(collision);
-        DamageEnemy(collision);
-    }
-
     private void DestroyFoods()
     {
         Destroy(gameObject);
     }
+
     private void PlayerCheck(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -45,6 +57,7 @@ public class Foods : MonoBehaviour
             DestroyFoods();
         }
     }
+
     private void DamageEnemy(Collision collision)
     {
         var EnemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
@@ -59,6 +72,7 @@ public class Foods : MonoBehaviour
                 }
                 else
                 {
+                    _playerHealth.DealDamage(Damage);
                     DestroyFoods();
                 }
             }
@@ -71,6 +85,7 @@ public class Foods : MonoBehaviour
                 }
                 else
                 {
+                    _playerHealth.DealDamage(Damage);
                     DestroyFoods();
                 }
             }
@@ -82,6 +97,7 @@ public class Foods : MonoBehaviour
                 }
                 else
                 {
+                    _playerHealth.DealDamage(Damage);
                     DestroyFoods();
                 }
             }
