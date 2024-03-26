@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 278652836}
   - component: {fileID: 278652838}
   - component: {fileID: 278652837}
+  - component: {fileID: 278652839}
   m_Layer: 0
   m_Name: NW180_1
   m_TagString: Untagged
@@ -269,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 278652835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.666, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4351900703671707464}
   m_RootOrder: 0
@@ -338,6 +339,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &278652839
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278652835}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9e1b51c4f6219e4ab08aa3f35ea8ed8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &416318656
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,13 +372,14 @@ GameObject:
   - component: {fileID: 416318658}
   - component: {fileID: 416318657}
   - component: {fileID: 416318662}
+  - component: {fileID: 416318663}
   m_Layer: 0
   m_Name: AppleWanter
   m_TagString: AppleWanter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &416318657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +473,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &416318663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416318656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379b95e0808155949b8ae403d0cbdc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 416318659}
 --- !u!1 &645330093
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &645330094
 Transform:
   m_ObjectHideFlags: 0
@@ -494,6 +528,7 @@ GameObject:
   - component: {fileID: 877334442}
   - component: {fileID: 877334444}
   - component: {fileID: 877334443}
+  - component: {fileID: 877334445}
   m_Layer: 0
   m_Name: VW180_1
   m_TagString: Untagged
@@ -510,7 +545,7 @@ Transform:
   m_GameObject: {fileID: 877334441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.666, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1458159617}
   m_RootOrder: 0
@@ -579,6 +614,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &877334445
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877334441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e44afb808c7bc9d4ba05cd706d832a00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1047390443
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1178083653
 Transform:
   m_ObjectHideFlags: 0
@@ -893,13 +947,14 @@ GameObject:
   - component: {fileID: 1458159614}
   - component: {fileID: 1458159613}
   - component: {fileID: 1458159618}
+  - component: {fileID: 1458159619}
   m_Layer: 0
   m_Name: SaladWanter
   m_TagString: SaladWanter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1458159613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,6 +1048,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1458159619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458159612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379b95e0808155949b8ae403d0cbdc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 1458159615}
 --- !u!114 &1479380541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5774476403383173288, guid: d98eace116bd13b4ab962181416249cb,
@@ -1142,6 +1210,7 @@ GameObject:
   - component: {fileID: 1701797409}
   - component: {fileID: 1701797411}
   - component: {fileID: 1701797410}
+  - component: {fileID: 1701797412}
   m_Layer: 0
   m_Name: IW180_1
   m_TagString: Untagged
@@ -1158,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 1701797408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.666, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 416318661}
   m_RootOrder: 0
@@ -1227,6 +1296,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1701797412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701797408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20f14011f1dc1cf408258d6ec7a40cfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1724747931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7598799141113070882, guid: a53d601963680914e98005165a9abdc2,
@@ -1537,7 +1625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2074124455
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,13 +1819,14 @@ GameObject:
   - component: {fileID: 4351900703671707467}
   - component: {fileID: 4351900703671707468}
   - component: {fileID: 4351900703671707470}
+  - component: {fileID: 4351900703671707471}
   m_Layer: 0
   m_Name: TeaWanter
   m_TagString: TeaWanter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &4351900703671707470
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1754,6 +1843,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4351900703671707471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351900703671707469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379b95e0808155949b8ae403d0cbdc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 4351900703671707466}
 --- !u!114 &5724437203794850001 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1645519591144943253, guid: d98eace116bd13b4ab962181416249cb,

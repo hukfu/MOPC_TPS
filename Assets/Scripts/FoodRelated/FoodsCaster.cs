@@ -69,7 +69,6 @@ public class FoodsCaster : MonoBehaviour
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             AppleCapacity -= 1;
-                            Debug.Log(AppleCapacity);
                         }
                     }
                     if (_isTeaInHands)
@@ -81,7 +80,6 @@ public class FoodsCaster : MonoBehaviour
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             TeaCapacity -= 1;
-                            Debug.Log(TeaCapacity);
                         }
                     }
                     if (_isSaladInHands)
@@ -93,7 +91,6 @@ public class FoodsCaster : MonoBehaviour
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             SaladCapacity -= 1;
-                            Debug.Log(SaladCapacity);
                         }
                     }
                 }

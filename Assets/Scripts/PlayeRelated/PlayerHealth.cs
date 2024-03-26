@@ -9,10 +9,6 @@ public class PlayerHealth : MonoBehaviour
     {
         value = Maxvalue;
     }
-    public void Update()
-    {
-        Debug.Log(value);
-    }
 
     public void DealDamage(float Damage)
     {
