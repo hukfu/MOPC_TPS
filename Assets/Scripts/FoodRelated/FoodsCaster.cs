@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class FoodsCaster : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class FoodsCaster : MonoBehaviour
 
     public LayerMask FloorLayerMask;
 
+    public TextMeshProUGUI uiTextApples;
+    public TextMeshProUGUI uiTextTea;
+    public TextMeshProUGUI uiTextSalad;
+
+
     private bool _isAppleInHands = true;
     private bool _isTeaInHands = false;
     private bool _isSaladInHands = false;
@@ -25,7 +31,16 @@ public class FoodsCaster : MonoBehaviour
         ChangeFoodsInHands();
         DelayTiming();
         FoodCasting();
+        Text();
     }
+
+    public void Text()
+    {
+        uiTextApples.text = AppleCapacity.ToString();
+        uiTextTea.text = TeaCapacity.ToString();
+        uiTextSalad.text = SaladCapacity.ToString();
+    }
+
     private void ChangeFoodsInHands()
     {
         if (Input.GetKeyDown(KeyCode.Z))

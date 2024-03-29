@@ -54,7 +54,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8313370025773947319
 Rigidbody:
@@ -90,7 +90,6 @@ MonoBehaviour:
   IsApples: 0
   IsTea: 0
   IsSalad: 1
-  Player: {fileID: 5774476403383173288, guid: d98eace116bd13b4ab962181416249cb, type: 3}
 --- !u!1 &8944709466960340311
 GameObject:
   m_ObjectHideFlags: 0
