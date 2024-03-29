@@ -17,7 +17,6 @@ public class EnemyBillboard : MonoBehaviour
         Vector3 nextPosition2 = new Vector2(nextPosition3.x, nextPosition3.z);
         Vector2 cameraLookDirection = new Vector2(0, -1.0f);
         float angle = Vector2.Angle(cameraLookDirection, nextPosition2);
-        Debug.Log(angle);
     }
 }
 

@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5774476403248699771}
   - component: {fileID: 5774476403248699772}
   - component: {fileID: 5774476403248699773}
+  - component: {fileID: 5009291989976321235}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -225,6 +226,35 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5774476403248699774}
   m_Enabled: 1
+--- !u!114 &5009291989976321235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774476403248699774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedc9c35d33c9544bd5239e7958d571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  mat: {fileID: 0}
+  flatLut: {fileID: 2800000, guid: ad6e386de0e0fb14096d245400d241d3, type: 3}
+  bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+  ColorBleed: -0.05
+  LinesMult: 0.8
+  ColorShift: 0.1
+  newScreenSize: {x: 160, y: 200}
+  screenStretching: {x: 0.01, y: 0.01}
+  CustomScreenSize: 1
+  AspectRatioBars: 0
+  OneBitColor: 0
+  VerticalLines: 0
+  HorizontalLines: 0
+  Dithering: 1
+  Paletting: 1
+  clearNextUpdate: 0
 --- !u!1 &5774476403383173292
 GameObject:
   m_ObjectHideFlags: 0

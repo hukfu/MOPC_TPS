@@ -12,6 +12,8 @@ public class FoodsCaster : MonoBehaviour
 
     public float Delay = 1.0f;
 
+    public LayerMask FloorLayerMask;
+
     private bool _isAppleInHands = true;
     private bool _isTeaInHands = false;
     private bool _isSaladInHands = false;
@@ -54,7 +56,7 @@ public class FoodsCaster : MonoBehaviour
     private void FoodCasting()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity, FloorLayerMask))
         {
             if (Input.GetMouseButtonDown(0))
             {

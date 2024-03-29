@@ -3,6 +3,7 @@
 public class AxisOfRotation : MonoBehaviour
 {
     public Animator Animator;
+    public LayerMask FloorLayerMask;
 
     void Update()
     {
@@ -13,7 +14,7 @@ public class AxisOfRotation : MonoBehaviour
     private void Rotation()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity, FloorLayerMask))
         {
             Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
             transform.LookAt(targetPosition);
