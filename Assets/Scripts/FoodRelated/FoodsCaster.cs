@@ -26,6 +26,13 @@ public class FoodsCaster : MonoBehaviour
 
     private float _time = 0;
 
+    private AudioSource _audioSource;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         ChangeFoodsInHands();
@@ -83,6 +90,7 @@ public class FoodsCaster : MonoBehaviour
                         {
                             Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                             Foods food = Instantiate(ApplePrefab, transform.position, transform.rotation);
+                            _audioSource.Play();
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             AppleCapacity -= 1;
@@ -94,6 +102,7 @@ public class FoodsCaster : MonoBehaviour
                         {
                             Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                             Foods food = Instantiate(TeaPrefab, transform.position, transform.rotation);
+                            _audioSource.Play();
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             TeaCapacity -= 1;
@@ -105,6 +114,7 @@ public class FoodsCaster : MonoBehaviour
                         {
                             Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                             Foods food = Instantiate(SaladPrefab, transform.position, transform.rotation);
+                            _audioSource.Play();
                             food.transform.LookAt(targetPosition);
                             _time = 0;
                             SaladCapacity -= 1;

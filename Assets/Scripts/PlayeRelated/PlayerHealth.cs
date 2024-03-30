@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class PlayerHealth : MonoBehaviour
     public Sprite HeartFull;
     public Sprite HeartEmpty;
 
+    private AudioSource _audioSource;
+
     private void Start()
     {
         value = Maxvalue;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,9 +40,10 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage(float Damage)
     {
         value -= Damage;
+        _audioSource.Play();
         if (value <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("Losing");
         }
     }
 }

@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _characterController;
 
+    public bool _isMoving;
+
+
     void Start()
     {
         GetWhatsNeeded();
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovementControllsUpdate();
+        IsMovingCheck();
         AnimationHandler();
     }
     void FixedUpdate()
@@ -57,15 +61,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void AnimationHandler()
+    private void IsMovingCheck()
     {
         if (_moveVector.x == 0 && _moveVector.z == 0)
         {
-            Animator.SetBool("IsMoving", false);
+            _isMoving = false;
         }
         else
         {
-            Animator.SetBool("IsMoving", true);
+            _isMoving = true;
         }
+    }
+
+    private void AnimationHandler()
+    {
+        Animator.SetBool("IsMoving", _isMoving);
+    }
+    
+    public void Stop()
+    {
+        Animator.SetBool("IsMoving", false);
+        _isMoving = false;
     }
 }
