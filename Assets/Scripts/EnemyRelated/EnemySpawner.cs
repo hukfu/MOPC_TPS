@@ -52,6 +52,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void DelayTime()
     {
-        Delay = Random.Range(13, 20);
+        Delay = Random.Range(14, 20);
     }
 }

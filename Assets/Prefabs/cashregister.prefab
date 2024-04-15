@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6194591700311732710}
   m_Layer: 0
-  m_Name: cashregister
+  m_Name: CashRegister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

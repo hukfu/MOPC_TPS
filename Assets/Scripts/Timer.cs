@@ -3,14 +3,14 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private TextMeshProUGUI clockText;
-
     public int Hour = 9;
     public int Minute = 0;
 
+    private TextMeshProUGUI _clockText;
+
     private void Start()
     {
-        clockText = GetComponent<TextMeshProUGUI>();
+        _clockText = GetComponent<TextMeshProUGUI>();
         InvokeRepeating("UpdateClock", 0f, 0.5f);
     }
 
@@ -24,7 +24,6 @@ public class Timer : MonoBehaviour
             Minute = 0;
             Hour += 1;
         }
-
-        clockText.text = hour + ":" + minute;
+        _clockText.text = hour + ":" + minute;
     }
 }

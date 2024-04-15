@@ -2,14 +2,14 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float value = 1.0f;
+    public float Value = 1.0f;
     public GameObject Ascention;
     public GameObject Main;
 
     public void DealDamage(float Damage)
     {
-        value -= Damage;
-        if (value <= 0)
+        Value -= Damage;
+        if (Value <= 0)
         {
             Destroy(gameObject);
             var asc = Instantiate(Ascention);
