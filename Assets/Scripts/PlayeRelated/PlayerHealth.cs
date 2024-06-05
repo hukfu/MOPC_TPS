@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         _audioSource.Play();
         if (value <= 0)
         {
-            SceneManager.LoadScene("Losing");
+            SceneManager.LoadScene("Lose");
         }
     }
 }
